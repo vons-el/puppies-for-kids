@@ -49,6 +49,7 @@ header .donate-link {
   background: #a40b28;
   padding: 10px 30px;
   color: white;
+  align-self: flex-end;
   /* add align-self; flex-end; to overwrite align-items: center; from the parent container */
   border-radius: 5px;
 }
@@ -207,13 +208,16 @@ footer img {
   }
 
   .main-content-wrapper {
+    flex-grow: 1;
     /* Add flex-grow: 1; so that the main-content-wrapper fills up any extra space in the parent container. */
     width: 55%;
   }
 
   aside {
-    width: 300px;
+    /* width: 300px; */
+    flex: 0 0 300px;
     /* Add flex: 0 0 300px; so that the sidebar doesn't shrink below the optimum width of 300px. */
+    align-self: flex-start;
     /* Add align-self: flex-start; to overwrite the default align-items' value of stretch. */
   }
 
@@ -230,11 +234,13 @@ footer img {
 
   .about-text {
     width: 50%;
+    order: 1;
     /* Change the placement of the text by adding order: 1; */
   }
 
   .about-image {
     width: 50%;
+    order: 2;
     /* Change the placement of the image by adding order: 2; */
   }
 }
@@ -257,6 +263,7 @@ footer img {
   }
 
   .program p {
+    flex-grow: 1;
     /* Add flex-grow: 1; so that the extra space within the card is below the paragraph instead of below the link. */
   }
 }
